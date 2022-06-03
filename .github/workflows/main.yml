@@ -9,11 +9,8 @@ on:
     branches: [ main ]
 
 jobs:
-  test:
+  build:
     runs-on: macos-latest
-    strategy:
-        matrix: 
-          destination: ['platform=iOS Simulator, OS=13.2.2, name= iPhone 11']
     steps:
       - name: Checkout 
         uses: actions/checkout@v3
