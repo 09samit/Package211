@@ -16,8 +16,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Build Swift package
-        run: swift build -v
+        run: xcodebuild -showdestinations -scheme Package211
 
-      # Runs a set of commands using the runners shell
-      - name: Test Swift package
-        run: swift test -v
+      - name: Build and test ( iOS 15.0)
+        run: xcodebuild test -scheme Package211 -destination 'platform=iOS Simulator,OS=15.0,name=iPhone 12 Pro'
